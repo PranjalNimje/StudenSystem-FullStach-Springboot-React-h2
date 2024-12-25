@@ -1,0 +1,3 @@
+[submodule "studentsystemfrontend/studentsystemfrontend"]
+	path = studentsystemfrontend/studentsystemfrontend
+	url = https://github.com/PranjalNimje/StudenSystem-FullStach-Springboot-React-h2.git
