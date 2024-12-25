@@ -1,0 +1,47 @@
+1. Packages and classes/interfaces
+2. model class
+3. @Id -> tells that the property is primary key
+4. @GeneratedValue(strategy = GenerationType.IDENTITY) ->tells to auto increase the value automatically? GPT
+
+5. After writing model class, go for repository which is interface 
+6.  -> model 
+	-> repository (interface) 
+	-> service (interface then implement interface in class and autowire repository)
+	-> controller (restcontroller, requestmapping, autowire service in repo) 
+	
+7. JpaRepository<Student, Integer> 
+		-> Student ->model class
+		-> Integer -> Type of Primary key (Id) -> Primary key is id, so its type
+		
+8. setting database -> Mysql or h2 -> Do all the setting in application.properties file
+		spring.h2.console.enabled=true
+		spring.datasource.url=jdbc:h2:mem:testdb
+		spring.jpa.show-sql=true
+		
+9. inteface for Sservice , then implement that service interface -> in Service class (autowire repository)
+10. Write controller ( request mapping, autowire service in repo )
+
+11. @RequestBody
+
+12. Open Postman -> try get localhost:8080/student/add
+	-> Select body -> raw -> json
+	-> use double quotes for putting data
+	-> Ex. {
+    		"name": "Pranjal Nimje",
+    		"address": "Maha"
+			}
+13. Now you can see data in your database h2 console.
+
+14. Service -> we have multiple inbuilt methods for repository which we can use in service
+	ex. studentRepository.save(student)
+		studentRepository.findAll();
+		
+15. You have to send request body while doing update functionality.
+16. For update -> "localhost:8080/student/update/1"
+	Put this in request Body-> Body -> raw -> json
+	{
+    "name":"Dean",
+    "address":"California"
+	`}
+
+	
